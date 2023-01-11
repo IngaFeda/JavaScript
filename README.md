@@ -1,3 +1,3 @@
 # JavaScript
-<h2>Sveiki!</h2> <h3>Čia mano portfolio</h3>
+<h2>Sveiki!Čia mano portfolio</h2>
 <a href="ND.23.01.10.html">Periodic table</a>
