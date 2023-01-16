@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kalendorius</title>
+    <style>
+        body{
+            background: rgb(234, 233, 233);
+            font-family: 'proxima nova';
+            color: #768a96; 
+    }
+    .grid{
+        position: relative;
+        margin-left: 230px;
+    }
+        .grid_body{
+        display: grid;
+        background-color: rgb(234, 233, 233);
+        grid-template-columns: repeat(3, 300px);
+        grid-template-rows: repeat(4, 430px);
+        column-gap: 40px;
+        align-self: center;
+        justify-self: center;
+
+    }
+    .grid_item{
+        padding: 10px;
+        text-align: center;
+        color: #e09132;
+    }
+    .month{
+        border-collapse: collapse;
+        margin: auto;
+        font-size: 20px;
+    }
+    .header{
+        background-color: #adb8b9;
+        color: #768a96; 
+        text-align: center; 
+    }
+    tbody {
+        background-color: white;
+        text-align: center;
+    }
+    th{
+        padding:10px;
+    }
+    td{
+        padding: 10px;
+    }
+    td:last-child{
+        color: black;
+        font-weight: 600;
+    }
+    .holiday{
+        background-color: #44576d;
+        color:#cdd4cd !important;
+    }
+    .holiday1{
+        background-color: #ebeae8;
+    }
+    .current{
+        background-color: #397d4f;
+    }
+    .text{
+        color: #768a96;
+        text-align: justify;
+    }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center; font-size:18px;">Nedarbo dienų kalendorius</h1>
+    <div class="grid">
+        <div class="grid_body">
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr></tr>
+                        <th colspan="7">Sausis</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="6"></td>
+                        <td class="holiday">1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td class="current">13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>31</td>
+                        <td colspan="5"></td>
+                    </tr>
+                </tbody>
+                </table>
+                <span class="text">01-01 Naujieji metai</span>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Vasaris</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td class="holiday">16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td class="holiday1">21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="text">02-16 Lietuvos Valstybės atkūrimo diena</span><br>
+                <span class="text">02-21 Užgavėnės</span>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Kovas</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td class="holiday">11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="text">03-11 Nepriklausomybės atkūrimo diena</span>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Balandis</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td class="holiday">9</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="text">04-09 Velykos</span><br>
+                <span class="text">04-10 Velykų antroji diena</span>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Gegužė</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="holiday">1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td class="holiday">7</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td colspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="text">05-01 Tarptautinė darbo diena</span><br>
+                <span class="text">05-07 Motinos diena</span>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Birželis</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td class="holiday">4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td class="holiday">24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="text">06-04 Tėvo diena</span><br>
+                <span class="text">06-24 Joninės</span>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Liepa</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td class="holiday">6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td colspan="6"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="text">07-06 Karaliaus Mindaugo karūnavimo diena</span>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Rugpjūtis</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td class="holiday">15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="text">08-15 Žolinė</span>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Rugsėjis</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Spalis</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="6"></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>31</td>
+                        <td colspan="5"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Lapkritis</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td class="holiday">1</td>
+                        <td class="holiday">2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="text">11-01 Visų šventųjų diena</span><br>
+                <span class="text">11-02 Vėlinės</span>
+            </div>
+            <div class="grid_item">
+                <table class="month">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="7">Gruodis</th>
+                        </tr>
+                        <tr>
+                            <th>Pr</th>
+                            <th>An</th>
+                            <th>Tr</th>
+                            <th>Ke</th>
+                            <th>Pe</th>
+                            <th>Še</th>
+                            <th>Se</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td class="holiday">24</td>
+                    </tr>
+                    <tr>
+                        <td class="holiday">25</td>
+                        <td class="holiday">26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <span class="text">12-24 Šv. Kūčios</span><br>
+                <span class="text">12-25 Šv. Kalėdos</span><br>
+                <span class="text">12-26 Šv. Kalėdų antroji diena</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
