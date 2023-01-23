@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warm up</title>
+    <style>
+        .yellowbox{
+            position: relative;
+            width: 400px;
+            height:150px;
+            background: #f2e09f;
+            border-radius: 0 0 105px;
+            top: -7px;
+            left:-20px;
+        }
+        .yellowbox1{
+            position: relative;
+            width: 400px;
+            height:150px;
+            background: #f2e09f;
+            z-index: -1;
+            top: -9px;
+            left:-20px;
+        }
+        .purplebox{
+            position: absolute;
+            width: 400px;
+            height:150px;
+            background: #c36271;
+            z-index: -1;
+            top: 0;
+            left:20px;
+        }
+        .purplebox1{
+            position: absolute;
+            width: 400px;
+            height:150px;
+            background: #c36271;
+            border-radius: 102px 0 0;
+            z-index: 2;
+            top: 150px;
+            left: 20px;
+        }
+        .yellowcircle{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: #f2e09f;
+            border-radius: 50%;
+            z-index: 3;
+            border-radius: 0 0 50% 50% / 0 0 100% 100%;
+            top: 150px;
+            left:150px;
+        }
+        .purplecircle{
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: #c36271;
+            z-index: 4;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0; 
+            top: 100px;
+            left:150px;
+        }
+    </style>
+</head>
+<body>
+        <div class="yellowbox"></div>
+        <div class="yellowbox1"></div>
+        <div class="purplebox"></div>
+        <div class="purplebox1"></div>
+        <div class="yellowcircle"></div>
+        <div class="purplecircle"></div>
+</body>
+</html>
