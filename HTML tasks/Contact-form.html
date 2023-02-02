@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Comment block</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+            font-style: bold;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            position:relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 20px auto;
+            
+        }
+        label {
+            display: block;
+            font-size:16px;
+            font-weight: 600;
+        }
+        input{
+            padding-bottom: 2rem;
+        }
+        .container{
+            box-shadow: 10px 10px 9px 0 rgb(186, 185, 185);
+            position: relative;
+            width:1200px;
+            height: 600px;
+        }
+        .greenblock{
+            position: absolute;
+            width: 400px;
+            height: 600px;
+            background-color: #56c000;
+            color: #fafcfc;
+            padding: 3%;
+        }
+        .whiteblock{
+            position: absolute;
+            top:0;
+            right:0;
+            width: 800px;
+            height:600px;
+            background-color: #fafcfc;
+            font-size: 13px;
+            padding: 3% 5%;
+        }
+        .field{
+            width:300px;
+            padding-top: .3rem;
+            padding-bottom: .5rem;
+            background-color: #fafcfc;
+            border-top: #fafcfc;
+            border-left: #fafcfc;
+            border-right: #fafcfc;
+            border-bottom: 1px solid #56c000;
+        }
+        .field1{
+            width:620px;
+            padding-top: .3rem;
+            padding-bottom: .5rem;
+            background-color: #fafcfc;
+            border-top: #fafcfc;
+            border-left: #fafcfc;
+            border-right: #fafcfc;
+            border-bottom: 1px solid #56c000;
+        }
+        textarea {
+            size: fixed;
+            height: 100px;
+        }
+        .divider{
+            padding-bottom: 20px;
+        }
+        .divider1{
+            display: block;
+            float: left;
+            padding-bottom: 20px;
+        }
+        .divider2{
+            display: block;
+            float: left;
+            padding-left: 20px;
+            padding-bottom: 20px;
+        }
+        button{
+            padding: 1rem;
+            background-color: #56c000;
+            color: #fafcfc;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 12px;
+            border:#fafcfc;
+        }
+        button:hover{
+            background-color: #56c000;
+        }
+        ul{
+            list-style: none;
+        }
+        li span{
+            left:20px;
+        }
+        i{
+            position: relative;
+            display:block;
+            margin: 0;
+            color: #fafcfc;
+            font-size: 20px;
+            width: 50px;
+            height:50px;
+            border-radius: 50%;
+            border: #fafcfc 1px solid;
+            text-align: center;
+            top:11px;
+            left:-23px;
+            padding: 15px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="greenblock">
+            <h2>Let's get in touch</h2>
+            <p>We're open for any suggestion or just to have a chat</p>
+            <ul>
+                <li><i class="bi bi-geo-alt"></i> <span>Address: 198 West 21th Street,
+                Suite 721 New York, NY 10016</span></li>
+                <li><i class="bi bi-telephone"></i> <span>Phone: +1235 2355 98</span></li>
+                <li><i class="bi bi-envelope"></i><span> Email: info@yoursite.com</span></li>
+                <li><i class="bi bi-globe-americas"></i> <span>Website yoursite.com</span></li>
+            </ul>
+        </div>
+        <div class="whiteblock">
+                <h1>Get in touch</h1>
+            <div class="divider1">
+                <label>FULL NAME</label>
+                <input class="field" type="text" placeholder="Name">
+            </div>
+            <div class="divider2">
+                <label>EMAIL ADDRESS</label>
+                <input class="field" type="email" placeholder="Email">
+            </div>
+            <div class="divider">
+                <label>SUBJECT</label>
+                <input class="field1" type="text" placeholder="Subject">
+            </div>
+            <div class="divider">
+                <label>MESSAGE</label>
+                <textarea class="field1" placeholder="Message"></textarea>
+            </div>
+            <button type="button">Send Message</button>
+        </div>
+    </div>
+</body>
+</html>
