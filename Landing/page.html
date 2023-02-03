@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <title>New landing page from the bottom</title>
+
+    <style>
+        body{
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 0;
+            color: #6c757d;
+        }
+        h1, h2, h3, h4, h5, h6{
+            color:#343a40;
+            margin: 20px 0;
+        }
+        section{
+            padding: 100px 0;
+        }
+        .box{
+            display: flex;
+            padding: 80px 0;
+            gap: 40px;
+        }
+        .container{
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        .half-part{
+            width: 50%;
+        }
+        .intro{
+            color: #6c757d;
+            text-align: center;
+        }
+        .intro h3{
+            font-size: 30px;
+        }
+        .intro p{
+            margin: 5px auto;
+            max-width: 600px;
+            line-height: 20px;
+        }
+        .intro strong{
+            color: black;
+        }
+        .feature{
+            padding-top: 60px;
+        }
+        .feature h2{
+            font-size: 45px;
+            line-height: 55px;
+        }
+        .feature p{
+            max-width: 500px;
+            line-height: 25px;
+        }
+        .feature strong{
+            color: black;
+        }
+        .feature .ic{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .feature .ic p{
+            max-width: 450px;
+            line-height: 25px;
+            padding-left: 15px;
+        }
+        .opacity-3{
+            opacity: .3;
+        }
+        .opacity-6{
+            opacity: .6;
+        }
+        .feature i{
+            color: #1f61eb;
+            height: 50px;
+            width: 50px;
+            background: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.126);
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            list-style: none;
+        }
+        header{
+            margin-top: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        header .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header{
+            position: fixed;
+        }
+        header nav ul{
+            display: flex;
+            justify-content: space-between;
+            gap:40px;
+        }
+        header nav a{
+            color:#6c757d;
+        }
+        header nav a:hover{
+            color:#1f61eb;
+        }
+        header .account ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap:10px;
+        }
+        header .account a {
+            color: #6c757d;
+        }
+        header .account a:hover {
+            color: #1f61eb;
+        }
+        header .account a.sign-link {
+            background: #c8d9fa;
+            color: #1f61eb;
+            border: 1px solid #a6c1f8;
+            border-radius: 3px;
+            padding: 10px 15px 10px;
+            display: block;
+        }
+        header .account a.sign-link:hover {
+            background: #1f61eb;
+            color: #fff;
+            border: 1px solid #1f61eb;
+            border-radius: 3px;
+            padding: 10px 15px 10px;
+            display: block;
+        }
+        #home{
+            background: url('img/hero-3-bg.png') no-repeat top center / cover;
+        }
+        #home h1{
+            font-size: 50px;
+            margin-top: 70px;
+            line-height: 60px;
+        }
+        #home p{
+            max-width: 700px;
+            font-size: 18px;
+            line-height: 20px;
+        }
+        #home ul{
+            padding-left: 0;
+            font-size: 17px;
+        }
+        #home ul i{
+            padding-right: 10px;
+            color: #1ee1ad;
+            line-height: 30px;
+        }
+        #home .featured-button{
+            width: 100px;
+            background: #1f61eb;
+            color: #fff;
+            border-radius: 3px;
+            padding: 20px 30px;
+            display: block;
+            margin-top: 30px;
+        }
+        #home .featured-button:hover{
+            box-shadow: 0px 8px 12px 0px rgb(31 97 235 / 25%);
+        }
+        .icon h5{
+            font-size: 20px;
+            margin-top: 40px;
+        }
+        .icon{
+            text-align: center;
+            position: relative;
+        }
+        .icon i{
+            font-size: 50px;
+            color: black;
+            border-radius: 28% 72% 50% 50%/26% 20% 80% 74%;
+            height: 96px;
+            width: 96px;
+            padding: 25px;
+            background: #dee7fc;
+        }
+        .icon i.bg{
+            background: #ddfbf3;
+        }
+        .icon i.bg1{
+            background: #fff6dc;
+        }
+        .icon img{
+            position: absolute;
+            top: 87.5px; 
+            left: 311px;
+        }
+        #features{
+            background: #f8f9fa;
+        }
+        #features-2{
+            background: #f8f9fa url('img/features-bg.png') no-repeat center center / cover;
+        }
+        #counting{
+            background: url('img/counter-bg.jpg') no-repeat center center / cover;
+            background-attachment: fixed;
+            opacity: .7;
+        }
+        #counting .frame{
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            opacity: 1 !important;
+        }
+        #counting .case{
+            display: flex;
+            align-items: center;
+            border: 2px solid #474f574a;
+            padding: 20px;
+            border-radius: 10px;
+            background: #474f574a;
+        }
+        #counting .case ul{
+            padding-left: 25px;
+        }
+        #counting .case p{
+            font-size: 35px;
+            padding-bottom: 10px;
+            margin: 0;
+            color: #fff;
+        }
+        #counting .case i{
+            font-size: 45px;
+        }
+        #screenshot .screen{
+            overflow: hidden;
+        }
+        #screenshot .shots{
+            width: 110%;
+            display: flex;
+        }
+        #screenshot .shots ul{
+            display: flex;
+            margin-top: 70px;
+            gap: 80px;
+            justify-content: center;
+            padding-left: 0;
+            position: relative;
+            left: -84px;
+        }
+        #screenshot .shots img{
+            width: 130%; 
+            border-radius: 10px; 
+            box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.456);
+        }
+        #screenshot .active1{
+            transform: scale(1.1);
+            padding-bottom: 20px;
+        }
+        #screenshot .dots ul{
+            display: flex;
+            justify-content: center;
+            position: relative;
+            left: -18px;
+        }
+        #screenshot .dots i{
+            font-size: 30px;
+            color: #1f61eb;
+        }
+        #testimonial{
+            background:  #f8f9fa;
+        }
+        #testimonial .quote{
+            text-align: center;
+        }
+        #testimonial .quote img{
+            border-radius: 50%;
+            padding: 45px;
+            width: 80px;
+        }
+        #testimonial .quote p{
+            padding-top: 60px;
+            font-size: 18px;
+        }
+        #testimonial .quote h4{
+            max-width: 700px;
+            font-size: 19px;
+            margin:0 auto;
+            color: #434648;
+            line-height: 25px;
+        }
+        #testimonial .quote h6{
+            font-size: 17px;
+            color: #6c757d;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        #testimonial .image{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        #pricing .tarif{
+            display: flex;
+            justify-content: space-evenly;
+            border-radius: 25px;
+            margin: 50px 478px 20px;
+            background: #e1e3e5;
+            align-items: center;
+        }
+        #pricing .tarif > p{
+            margin: 6px 0; 
+        }
+        #pricing .tarif > p:nth-child(2){
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        #pricing .active{
+            color:#fff;
+            background: #1f61eb;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+        #pricing .plan{
+            display: flex;
+            gap: 50px;
+        }
+        #pricing .monthly{
+            width: 33%;
+            background-color: #fff;
+            box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.303);
+            font-size: 18px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        #pricing .monthly li{
+            padding-bottom: 20px;
+        }
+        #pricing .monthly i, strong{
+            color: black;
+        }
+        #pricing .badge{
+            background-color: #eb1f52;
+            color: #fff;
+            font-size: 13px;
+            padding: 6px 40px;
+            position: absolute;
+            top: 30px;
+            right: -29px;
+            transform: rotate(35deg);
+            box-shadow: 0 2px 8px rgb(16 22 30 / 30%);
+        }
+        #pricing .price{
+            text-align: center;
+            background: #e1e3e5;
+            width: 230px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        #pricing .value{
+            color: #1f61eb;
+            font-size: 30px;
+        }
+        #pricing button{
+            color:#fff;
+            background: rgb(31,97,235);
+            background: linear-gradient(90deg, rgba(31,97,235,1) 49%, rgba(255,255,255,1) 100%);
+            margin: 20px 35px;
+            border-radius: 15px; 
+            border: transparent;
+        }
+        #pricing button p{
+            font-size: 15px;
+        }
+        #faq{
+            background:  #f8f9fa;
+        }
+        #faq .accordeon{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            background: #fff;
+            border-radius: 10px;
+            flex-direction: column;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.150);
+        }
+        #faq .accordeon p{
+            padding: 0 20px;
+        }
+        #faq .activ{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 59px;
+            background: #e6e9ef;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        #faq .plate{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 0 20px;
+            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.150);
+        }
+        #faq .activ h3, 
+        .plate h3{
+            color: #434648ad;
+        }
+        #app {
+           text-align: center;
+        }
+        #app h1{
+            font-size: 45px;
+            max-width: 400px;
+            margin: 0 auto; 
+        }
+        #app p{
+            padding:30px;
+            max-width: 690px;
+            margin: 0 auto; 
+        }
+        #contact{
+            background:  #f8f9fa;
+        }
+        #contact .name{
+            display: flex;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+        #contact img{
+            width: 70px;
+            padding-right:20px ;
+        }
+        #contact .info > i{
+            background: #c8d9fa;
+            color: #1f61eb;
+            border: 1px solid #a6c1f8;
+            border-radius: 3px;
+            padding: 10px;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        #contact .list a{
+            color: #6c757d;
+        }
+        #contact .list ul{
+            padding-left: 0;
+            line-height: 40px;
+        }
+        #contact .half-part:nth-child(2){
+            width:80% !important;
+        }
+        #contact .former{
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px 1px #aaadb091;
+        }
+        #contact .quater{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        #contact .quater input{
+            padding: 8px;
+            width: 250px;
+            border: 1px solid #d7d9db;
+        }
+        #contact .half input{
+            padding: 8px;
+            border: 1px solid #d7d9db;
+        }
+        #contact .half{
+            display: flex;
+            flex-direction: column;
+        }
+        #contact .half label{
+            padding: 10px 0;
+        }
+        #contact .half textarea{
+            height:100px;
+            padding: 8px;
+            border: 1px solid #d7d9db;
+        }
+        #contact button{
+            display: flex;
+            margin:40px 0;
+            padding: 0 25px;
+            background: rgb(255,0,63);
+            background: linear-gradient(90deg, rgba(255,0,63,1) 0%, rgba(231,216,220,1) 100%);
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 17px;
+            align-items: center;
+            cursor: pointer;
+        }
+        #contact button p{
+            margin: 10px 0;
+            color: #fff;
+        }
+        #contact ion-icon{
+            transform: rotate(45deg);
+            font-size: 20px;
+        }
+        #contact input::placeholder{
+            color:#d7d9db;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        #contact textarea::placeholder{
+            color:#d7d9db;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        footer {
+            background:  #343a40;
+            color: #fff;
+        }
+        footer .foot{
+            display: flex;
+            padding: 70px 0;
+        }
+        footer .part-25{
+            width: 25%;
+            display: flex;  
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        footer .part-25 img{
+            padding: 20px 0;
+        }
+        footer .part-25 a{
+            padding-top: 20px;
+        }
+        footer .part-25 ul{
+            display: flex;
+            gap: 20px;
+            padding-left: 0;
+        }
+        footer .part-25 i{
+            height: 36px;
+            width: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            font-size: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        footer .part-25 i:hover{
+            color:#1f61eb;
+            background: #fff;
+            box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.185);
+        }
+        footer .part-75{
+            display: flex;
+            gap: 50px;
+            position: relative;
+        }
+        footer .part-75 ul{
+            padding-left: 0;
+        }
+        footer .part-75 ul{
+            line-height: 40px;
+
+        }
+        footer a, p{
+            color: #6c757d;
+        }
+        footer h2{
+            color: rgba(255, 255, 255, 0.714);
+        }
+        .tagline {
+            padding-bottom: 5px;
+            justify-content: space-around;
+            display: flex;
+            background: #484d53;
+            color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo-dark.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#screenshot">Screenshot</a></li>
+                    <li><a href="#testimonial">Testimonial</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="account">
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#" class="sign-link">Sign Up</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="home">
+            <div class="container">
+                <div class="box">
+                    <div class="half-part">
+                        <h1>Best Way to Make Online Payments</h1>
+                        <p>Maecenas tempus, tellus eget condimentum rhoncus quam semper libero sit amet adipiscing sem neque sed.</p>
+                        <ul>
+                            <li><i class="bi bi-check2-circle"></i>Aenean leo ligula porttitor eu consequat vitae.</li>
+                            <li><i class="bi bi-check2-circle"></i>Maecenas tempus tellus eget condimentum rhoncus quam.</li>
+                            <li><i class="bi bi-check2-circle"></i>Donec sodales sagittis as consequat.</li>
+                        </ul>
+                        <a href="#" class="featured-button">Get Started</a>
+                    </div>
+                    <div class="half-part">
+                        <img src="img/hero-3-img.png" alt="Bank account">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="howitwork">
+            <div class="container">
+                <div class="intro">
+                    <p>HOW IT <strong>WORK</strong></p>
+                    <h3>How dose it work?</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque rem aperiam.</p>
+                </div>
+                <div class="box">
+                    <div class="icon">
+                        <i class="bi bi-list-ul"></i>
+                        <h5>1. Intuitive visual editor</h5>
+                        <p>Nemo enim ipsam quia voluptas sit aspernatur ist dolores.</p>
+                        <img src="img/arrow-top.png" alt="">
+                    </div>
+                    <div class="icon">
+                        <i class="bi bi-palette bg"></i>
+                        <h5>2. Huge design collection</h5>
+                        <p>Nemo enim ipsam quia voluptas sit aspernatur ist dolores.</p>
+                        <img src="img/arrow-bottom.png" alt="">
+                    </div>
+                    <div class="icon">
+                        <i class="bi bi-stack bg1"></i>
+                        <h5>3. One click installation</h5>
+                        <p>Nemo enim ipsam quia voluptas sit aspernatur ist dolores.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="features">
+            <div class="container">
+                <div class="intro">
+                    <p>OUR <strong>FEATURES</strong></p>
+                    <h3>Smart Solutions For Buys People</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque rem aperiam.</p>
+                </div>
+                <div class="box">
+                    <div class="half-part">
+                        <img src="img/features-1.png" alt="">
+                    </div>
+                    <div class="half-part feature">
+                        <h2>Discover your destination</h2>
+                        <p>On the other hand, we denounce with righteous indignation so blinded that they cannot.</p>
+                        <div class="ic">
+                            <i class="bi bi-check2"></i> 
+                            <p><strong>The wise a therefore always holds</strong> in us matters to this principle a selection a rejects pleasures.</p>
+                            <i class="bi bi-layers"></i> 
+                            <p>Sed perspiciatis omnis a <strong>natus error accusantium doloremque</strong> laudantium tota rem aperiam eaque ipsa quae illo inventore.</p>
+                            <i class="bi bi-lock"></i> 
+                            <p>Et sit <strong>rerum facilis as expedita</strong> distinctio am libero tempore cum <strong>soluta nobis est</strong> eligendi optio cumque nihil impedit quo minus.</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section id="features-2">
+            <div class="container">
+                <div class="box">
+                    <div class="half-part feature">
+                        <h2>Connecting people, Places</h2>
+                        <p>On the other hand, we denounce with righteous indignation so blinded that they cannot.</p>
+                        <div class="ic">
+                            <i class="bi bi-check2"></i> 
+                            <p><strong>The wise a therefore always holds</strong> in us matters to this principle a selection a rejects pleasures.</p>
+                            <i class="bi bi-layers"></i> 
+                            <p>Sed perspiciatis omnis a <strong>natus error accusantium doloremque</strong> laudantium tota rem aperiam eaque ipsa quae illo inventore.</p>
+                            <i class="bi bi-lock"></i> 
+                            <p>Et sit <strong>rerum facilis as expedita</strong> distinctio am libero tempore cum <strong>soluta nobis est</strong> eligendi optio cumque nihil impedit quo minus.</p>
+                        </div>
+                    </div>
+                    <div class="half-part">
+                        <img src="img/features-2.png" alt="">
+                    </div>
+                </div>
+        </section>
+        <section id="counting">
+            <div class="frame">
+                <div class="case">
+                    <i class="bi bi-globe"></i>
+                    <ul>
+                        <li><p>825</p></li>
+                        <li>GLOBAL BRANDS</li>
+                    </ul>
+                </div>
+                <div class="case">
+                    <i class="bi bi-emoji-smile"></i>
+                    <ul>
+                        <li><p>1800+</p></li>
+                        <li>HAPPY CLIENTS</li>
+                    </ul>
+                </div>
+                <div class="case">
+                    <i class="bi bi-lightbulb"></i>
+                    <ul>
+                        <li><p>599+</p></li>
+                        <li>CREATIVE IDEA</li>
+                    </ul>
+                </div>
+                <div class="case">
+                    <i class="bi bi-people-fill"></i>
+                    <ul>
+                        <li><p>2000+</p></li>
+                        <li>USER CLIENTS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="screenshot">
+            <div class="container">
+                <div class="intro">
+                    <p>APP <strong>SCREENS</strong></p>
+                    <h3>Awesome Screenshot</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque rem aperiam.</p>
+                </div>
+                <div class="screen">
+                    <div class="shots">
+                        <ul>
+                            <li class="opacity-3"><img src="img/1.jpg"></li>
+                            <li class="opacity-6"><img src="img/2.jpg"></li>
+                            <li class="active1"><img src="img/6.jpg"></li>
+                            <li class="opacity-6"><img src="img/3.jpg"></li>
+                            <li class="opacity-3"><img src="img/4.jpg"></li>
+                        </ul> 
+                    </div>
+                    <div class="dots">
+                        <ul>
+                            <li class="opacity-3"><i class="bi bi-dot"></i></li>
+                            <li class="opacity-6"><i class="bi bi-dot"></i></li>
+                            <li><i class="bi bi-dot"></i></li>
+                            <li class="opacity-6"><i class="bi bi-dot"></i></li>
+                            <li class="opacity-3"><i class="bi bi-dot"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="testimonial">
+            <div class="container">
+                <div class="intro">
+                    <p>OUR <strong>TESTIMONIAL</strong></p>
+                    <h3>What Our Customers Say</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque rem aperiam.</p>
+                </div>
+                <div class="quote">
+                    <p>“Itaque earum us tenetur sapiente delectus asperiores repellat.”</p>
+                    <h4>At vero eos et accusamus iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atqued corrupti as quos dolores quas molestias excepturi occaecati provident.</h4>
+                    <img src="img/user-1.jpg" alt="">
+                    <h4>Mayra Vasquez</h4>
+                    <h6>Web Development, USA</h6>
+                </div>
+                <div class="image">
+                    <img src="img/dribbble.png" alt="">
+                    <img src="img/insta.png" alt="">
+                    <img src="img/bootstrap.png" alt="">
+                    <img src="img/jquery.png" ali="">
+                </div>
+            </div>
+        </section>
+        <section id="pricing">
+            <div class="container">
+                <div class="intro">
+                    <p>OUR <strong>PRICING</strong></p>
+                    <h3>Pricing Plan</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque rem aperiam.</p>
+                </div>
+                <div class="tarif">
+                    <p class="active">Monthly</p><p>Yearly</p>
+                </div>
+                <div class="plan">
+                    <div class="monthly">
+                        <div class="price">
+                            <h3>Free</h3>
+                            <span class="value">$0.00</span> /Month
+                        </div>
+                        <ul>
+                            <li><i class="bi bi-check-lg"></i> <strong>3</strong> Projects</li>
+                            <li><i class="bi bi-check-lg"></i> <strong>580GB</strong> Storage</li>
+                            <li><i class="bi bi-check-lg"></i> <strong>Unlimuted</strong> Contacts</li>
+                            <li><i class="bi bi-check-lg"></i> <strong>5</strong> Domains</li>
+                            <li><i class="bi bi-check-lg"></i> Free Support <strong>24/7</strong></li>
+                        </ul>
+                        <button><p>Choose Plan</p></button>
+                    </div>
+                    <div class="monthly">
+                        <div class="badge">MOST POPULAR</div>
+                        <div class="price">
+                            <h3>Standard</h3>
+                            <span class="value">$29.00</span> /Month
+                        </div>
+                        <ul>
+                            <li><i class="bi bi-check-lg"></i> <strong>10</strong> Projects</li>
+                            <li><i class="bi bi-check-lg"></i> <strong>1TB</strong> Storage</li>
+                            <li><i class="bi bi-check-lg"></i> <strong>Unlimuted</strong> Contacts</li>
+                            <li><i class="bi bi-check-lg"></i> <strong>12</strong> Domains</li>
+                            <li><i class="bi bi-check-lg"></i> Free Support <strong>24/7</strong></li>
+                        </ul>
+                        <button><p>Choose Plan</p></button>
+                    </div>
+                    <div class="monthly">
+                        <div class="price">
+                            <h3>Enterprice</h3>
+                            <span class="value">$49.00</span> /Month
+                        </div>
+                        <ul>
+                            <li><i class="bi bi-check-lg"></i> <strong>20</strong> Projects</li>
+                            <li><i class="bi bi-check-lg"></i> <strong>2.5TB</strong> Storage</li>
+                            <li><i class="bi bi-check-lg"></i> <strong>Unlimuted</strong> Contacts</li>
+                            <li><i class="bi bi-check-lg"></i> <strong>18</strong> Domains</li>
+                            <li><i class="bi bi-check-lg"></i> Free Support <strong>24/7</strong></li>
+                        </ul>
+                        <button><p>Choose Plan</p></button>
+                    </div>
+                </div>
+        </section>
+        <section id="faq">
+            <div class="container">
+                <div class="intro">
+                    <p>OUR <strong>FAQS</strong></p>
+                    <h3>Frequently Asked Questions</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque rem aperiam.</p>
+                </div>
+                <div class="box">
+                    <div class="half-part">
+                        <img src="img/faq.png" alt="">
+                    </div>
+                    <div class="half-part">
+                        <div class="accordeon">
+                            <div class="activ"><h3>How do I get the Mobile App for my phone?</h3> <i class="bi bi-chevron-up"></i></div>
+                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                        </div>
+                        <div class="plate">
+                            <h3>How do I get the Mobile App for my phone?</h3> <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="plate">
+                            <h3>What's special about Appexy?</h3>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="plate">
+                            <h3>How much does Appexy cost?</h3>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="plate">
+                            <h3>How do I disable installed apps?</h3>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="plate">
+                            <h3>What about the security of my payments?</h3>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="app">
+            <div class="container">
+                <h1>Available For Your Smartphone.</h1>
+                <p>The wise man therefore always holds in these matters to this of selection he rejects pleasures to other greater that id pains to avoid worse.</p>
+                <div class="image">
+                    <img src="img/i-store.png">
+                    <img src="img/play-store.png">
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <div class="intro">
+                    <p>OUR <strong>CONTACT US</strong></p>
+                    <h3>Get in Touch</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque rem aperiam.</p>
+                </div>
+                <div class="box">
+                    <div class="half-part">
+                        <div class="name">
+                            <img src="img/hello-icon.png" alt="">
+                            <h1>Say Hello!</h1>
+                        </div>
+                        <div class="info">
+                            <i class="bi bi-envelope-fill"></i>Email
+                            <div class="list">
+                                <ul>
+                                <li><i class="bi bi-arrow-right-short"></i><a href="#">JuanaMRush@jourrapide.com</a></li>
+                                <li><i class="bi bi-arrow-right-short"></i><a href="#">BrandonDBrown@jourrapide.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <i class="bi bi-telephone-fill"></i>Phone
+                            <div class="list">
+                                <ul>
+                                <li><i class="bi bi-arrow-right-short"></i><a href="#">(+01) 1234 5678 00</a></li>
+                                <li><i class="bi bi-arrow-right-short"></i><a href="#">(+01) 1234 5678 90</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <i class="bi bi-geo-alt-fill"></i>Address
+                            <div class="list">
+                                <ul>
+                                <li><i class="bi bi-arrow-right-short"></i> <strong> New York Office</strong></li>
+                                <li>331 Maple Street, Monroe Avenue, CA 90017</li>
+                                <li><i class="bi bi-arrow-right-short"></i> <strong>Anguilla Office</strong></li>
+                                <li>2118 Bird Spring, Creek Road, TX 77388</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="half-part">
+                        <div class="former">
+                            <div class="quater">
+                                <div><p>First Name</p>
+                                    <input type="text" placeholder="Your first name..."></div>
+                                <div><p>Last Name</p>
+                                <input type="text" placeholder="Your last name..."></div>
+                                <div><p>Email Address</p>
+                                <input type="email" placeholder="Your email..."></div>
+                                <div><p>Your phone</p>
+                                <input type="text" placeholder="Type phone number..."></div>
+                            </div>
+                            <div class="half">
+                                <label>Subject</label>
+                                <input type="text" placeholder="Type subject...">
+                                <label>Messages</label>
+                                <textarea placeholder="Type messages"></textarea>
+                            </div>
+                            <button><p>Send Messages</p> <ion-icon name="paper-plane-outline"></ion-icon></button>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="foot">
+                <div class="part-25">
+                    <img src="img/logo-light.png">
+                    <a href="#">Hello@coderthemes.com</a>
+                    <p>+01 ( 1234 567 890 )</p>
+                    <h2>Follow Us</h2>
+                    <ul>
+                        <li><i class="bi bi-facebook"></i></li>
+                        <li><i class="bi bi-instagram"></i></li>
+                        <li><i class="bi bi-linkedin"></i></li>
+                        <li><i class="bi bi-skype"></i></li>
+                    </ul>
+                </div>
+                <div class="part-75">
+                    <div>
+                        <h2>About Us</h2>
+                        <ul>
+                            <li><a href="#">Support Center</a></li>
+                            <li><a href="#">Customer Support</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Copyright</a></li>
+                            <li><a href="#">Popular Campaign</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Our Information</h2>
+                        <ul>
+                            <li><a href="#">Return Policy</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Site Map</a></li>
+                            <li><a href="#">Store Hours</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>My Account</h2>
+                        <ul>
+                            <li><a href="#">Press Inquiries</a></li>
+                            <li><a href="#">Social Media Directories</a></li>
+                            <li><a href="#">Images & B-roll</a></li>
+                            <li><a href="#">Permissions</a></li>
+                            <li><a href="#">Speaker Requests</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>Policy</h2>
+                        <ul>
+                            <li><a href="#">Application Security</a></li>
+                            <li><a href="#">Softwere Principles</a></li>
+                            <li><a href="#">Unwanted Softwere Policy</a></li>
+                            <li><a href="#">Risponsible Supply Chain</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="tagline">
+        <p>2023 © Appexy - Coderthemes.com</p>
+        <p>Terms Conditions & Policy</p>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
