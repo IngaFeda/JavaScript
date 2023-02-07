@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+console.log('Task 1');
+    
+// task 1
+// Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, kur 0 yra herbas, o 1 - skaičius. 
+// Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu 
+// herbas. Suprogramuokite keturis skirtingus scenarijus kai monetos metimą stabdome:
+// Iškritus herbui;
+// Tris kartus iškritus herbui;
+// Tris kartus iš eilės iškritus herbui;
+
+let coin = rand(0, 1);
+
+if (coin === 0){
+     console.log("H - herbas");}
+else if (coin === 1) 
+    console.log("S - skaičius"); 
+
+ 
+//     console.log('A');
+    
+
+      
+    console.log('B');
+        while (coin < 1){
+        coin = rand(0, 1);
+            console.log("H - herbas");
+     if (coin >= 1){
+        break
+    }
+        }
+
+    console.log('C');
+    do {
+        coin = rand(0, 1);
+        console.log("H - herbas");
+        coin++
+    } while (coin < 1);
+
+
+   console.log('Task 2');
+// task 2
+// Kazys ir Petras žaidžiai šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, 
+// Kazys surenka taškų kiekį nuo 5 iki 25. 
+// Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. 
+// Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. 
+// Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+
+let gamer_1 = 0;
+let gamer_2 = 0;
+
+    while (gamer_1 <= 222){
+        gamer_1 += rand(10, 20);
+        gamer_2 += rand(5, 25);
+        if (gamer_2 >= 222) {
+        break }
+    } 
+    if(gamer_1 >= 222){
+    console.log('Game won: Petras', gamer_1);
+ } else if (gamer_2 >= 222) {
+    console.log('Game won: Kazys', gamer_2);
+ } else {
+    console.log('Game over');
+ }
+    
+
+ 
+    </script>
+</body>
+</html>

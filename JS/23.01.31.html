@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23.01.31</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+            // task 1. Sukurti du kintamuosius. 
+            // Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus (Jonas Jonaitis). 
+            // Atspausdinti trumpesnį stringą.
+
+        // let v = 10;
+        // console.log('Pirmoji:', v);
+        // v += 23;
+        // console.log('Naujoji:', v);
+
+        console.log('Task 1')
+        let name = 'Dylan';
+         console.log('Vardas:', name);
+        
+         let surname = "O'Brien";
+         console.log('Pavardė:', surname);
+         
+         if(name.length > surname.length) {
+            console.log('Short length:', surname);
+         }
+         else if (name.length === surname.length) {
+            console.log('Tha same lenght:', surname);
+         }
+         else {
+            console.log('Shortly lenght:', name);
+         }
+    
+           console.log('Task 2')
+           //  task2. Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir šiuos metus (nebūtinai tikrus). 
+        //  Parašykite kodą, kuris pagal gimimo metus paskaičiuotų jūsų amžių ir naudodamas vardo ir pavardės kintamuosius atspausdintų tokį sakinį :
+        //   "Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
+
+        let myname = 'Inga';
+        let mysurname = 'Fedukovičienė';
+        let year = '1997';
+        let currentyear = '2023';
+
+        currentyear -= 1997;
+        console.log('Aš esu', myname, mysurname,". Man", currentyear, "metai.")
+    
+        console.log('Task 3')
+        // task 3:Sukurti du kintamuosius. 
+        // Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. 
+        // Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš trijų paskutinių vardo ir pavardės kintamųjų raidžių. 
+        // Jį atspausdinti.
+
+
+        // The slice() method extracts a part of a string.
+
+        // The slice() method returns the extracted part in a new string.
+
+        // The slice() method does not change the original string.
+
+        // The start and end parameters specifies the part of the string to extract.
+
+        // The first position is 0, the second is 1, ...
+
+        // A negative number selects from the end of the string.
+
+        let text1 = "Thomas";
+        let text2 = "Sangster";
+
+        let task = text1.slice(3) + text2.slice(5);
+        console.log(task);
+
+        console.log('Task 4')
+
+        // task 4. Sukurti kintamąjį su stringu: “Once upon a time in hollywood”. 
+        // Jame visas “o” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.  
+        // Rezultatą atspausdinti.
+ 
+        let sentence = "Once upon a time in hollywood";
+        console.log(sentence.replaceAll(/[\O\o]/g,'*'));
+
+        console.log('Task 5')
+    
+        // task 5. Sukurkite keturis kintamuosius kuriems sugeneruokite atsitiktines reikšmes nuo 0 iki 2. 
+        // Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+
+        let one = rand(0, 2);
+        let two = rand(0, 2);
+        let three = rand(0, 2);
+        let four = rand(0, 2);
+
+        console.log(one, two, three, four);
+
+        let zero = 0;
+        let first = 0;
+        let second = 0;
+
+        if (one === 0);{
+            zero++;
+        }
+        if (two === 0);{
+            zero++;
+        }
+        if (three === 0);{
+            zero++;
+        }
+        if (four === 0);{
+            zero++;
+        }
+
+        if (one === 1);{
+            first++;
+        }
+        if (two === 1);{
+            first++;
+        }
+        if (three === 1);{
+            first++;
+        }
+        if (four === 1);{
+            first++;
+        }
+
+        if (one === 2);{
+            second++;
+        }
+        if (two === 2);{
+            second++;
+        }
+        if (three === 2);{
+            second++;
+        }
+        if (four === 2);{
+            second++;
+        }
+        console.log('Zero:', zero, 'First:', first, 'Second:', second);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23.02.01</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+         console.log('Task 1');
+
+        //  task 1 Pasinaudokite atsitiktinio skaičiaus generavimo funkcija. 
+        // Sukurkite du kintamuosius ir naudodamiesi funkcija jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. 
+        // Didesnę reikšmę padalinkite iš mažesnės. Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
+
+
+        let one = rand(0, 4);
+        let two = rand(0, 4);
+
+        console.log('Counting', one, two);
+
+        if( one > two) {
+            if (two === 0) {
+                console.log ('.');
+            } else {
+                console.log(one / two);
+                // .toFixed(2)
+            }
+        } else if(one ===0 && two === 0) {
+            console.log('.');
+        } else {
+            console.log(one / two);
+        }
+
+        console.log('Task 2');
+
+        //  task 2 Naudokite funkciją ir sukurkite tris kintamuosius kuriems priskirkite atsitiktines reikšmes nuo 0 iki 25. 
+        // Raskite ir atspausdinkite vidurinę reikšmę.
+
+        let first = rand(0, 25);
+        let second = rand(0, 25);
+        let third = rand(0, 25);
+
+        console.log("Counting:", first, second, third);
+
+        let small = Math.min(first, second, third);
+        let large = Math.max(first, second, third);
+
+        console.log('Min:', small);
+        console.log('Max:', large);
+
+
+
+        console.log('Task 3');
+
+        //  task 1 Sukurti du kintamuosius. 
+        // Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. 
+        // Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš pirmų vardo ir pavardės kintamųjų raidžių. 
+        // Jį atspausdinti.
+
+        let name = 'Dylan';        
+        let surname = "O'Brien";
+
+        let line = name[0] + surname[0]
+         console.log(line);
+
+        console.log('Task 4');
+
+        //  task 4 Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis 3 simboliai.
+
+        let letter = 'abcdefghijklmnopqrstuvwxyz'
+
+        let code = letter[rand(0, letter.length - 1)] + letter[rand(0, letter.length - 1)] + letter[rand(0, letter.length - 1)];
+        
+        console.log(code);
+    </script>
+</body>
+</html>
