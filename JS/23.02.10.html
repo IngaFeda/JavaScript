@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 23.02.09</title>
+</head>
+<body>
+    <script>
+         function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        //#1.Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+        let arr1 = [];
+        for (let i = 0; i < 30; i++){
+            arr1.push(rand(5, 25));
+        } 
+        console.log(arr1);
+        
+        //#2 Naudodamiesi 1 uždavinio masyvu:
+        //a. Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+        let counter = 0;
+         
+         for(let i of arr1){
+         if (i > 10) {
+            counter ++;
+         }
+        }
+         console.log('More than 10:', counter);
+        // b. didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
+        // let max = 0;
+        // max = Math.max(...arr1);
+        // c. Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
+        let sum = 0;
+        for (let i in arr1){
+            if (i % 2 === 0){
+                sum += arr1[i];
+            }
+        }
+        console.log('Sum of value with even index:', sum);
+        // d. Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+        let arr2 = [];
+        for (i in arr1){
+            arr2.push(arr1[i]-i)
+        }
+        console.log(arr2);
+        // e. Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
+        for (let i = 0; i < 10; i++){
+            arr2.push(rand(5, 25));
+        } 
+        // f. Iš masyvo elementų sukurkite du naujus masyvus. 
+        // Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių;
+        let arr3 =[];
+        let arr4 = [];
+        for (let i in arr1){
+            if (i % 2 === 0){
+                arr3.push(arr1[i]);
+            } else{
+                arr4.push(arr1[i])
+            }
+        }
+        // for(let i in arr1){
+        // arr3 = arr1.filter(i => i % 2 == 0);
+        // arr4 = arr1.filter(i => i % 2 == 1);
+        // }
+         console.log('Even index values:', arr3);
+         console.log('Odd index values:', arr4);
+        // g. Pirminio masyvo elementus su poriniais indeksais padarykite lygius 0 jeigu jie didesni už 15;
+       for (let i in arr1){
+        if (i % 2 ===0 && arr1[i] > 15)
+        arr1[i] = 0;
+       }
+        // h. Suraskite pirmą indeksą, kurio elemento reikšmė didesnė už 10;
+            let index1;
+                for (let i in arr1){
+                if (arr1[i]  > 10){
+                    index1 = i;
+                    break;
+                }
+            }
+            console.log(index1);
+
+        // i. Iš masyvo ištrinkite visus elementus turinčius porinį indeksą;
+            for (let i = 0; i < arr1.length; i+=2){
+                    arr2.splice(i, 1)
+            }
+            console.log(arr2);
+        
+    </script>
+</body>
+</html>

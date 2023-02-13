@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23.02.08</title>
+</head>
+<body>
+    <script>
+        // task
+        // Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. 
+        // Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+        
+        // a) “Įkalkite” 5 vinis mažais smūgiais. 
+        // Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
+        
+        // b) “Įkalkite” 5 vinis dideliais smūgiais. 
+        // Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() 
+        // funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+       let s= 0;       
+       let sblows=0;
+
+       console.log('A');
+       while (s <= 8.5){
+        s += rand(0.5, 2);
+        sblows++;
+       }
+       let sum = sblows * 5;
+       console.log("Number of hammer blows, if there're 5 small nails:", sum);
+
+       console.log('B');
+
+       let p = rand(0, 1);
+       let b = 0;
+       let bblows = 0;
+       if (p === 0){
+       while (b <= 8.5){
+        b += rand(2, 3);
+        bblows++;
+       }
+    } else if (p ===1){
+        b +=0;
+        bblows++;
+    } 
+    let bsum = bblows * 5;
+    console.log("Number of hammer blows, if there're 5 big nails:", bsum);
+    </script>
+</body>
+</html>
