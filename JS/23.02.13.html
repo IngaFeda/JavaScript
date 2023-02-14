@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 23.02.13</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        document.write('<h4>#3</h4>');
+        // #3 Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. 
+        // Suskaičiuokite kiek yra kiekvienos raidės.
+
+        let letter = [];
+        let raides = "ABCD";
+        let counter = {
+            A: 0,
+            B: 0,
+            C: 0,
+            D: 0
+        }
+        for (let i = 0; i < 200; i++){
+            let raide = raides[rand(0, raides.length - 1)]
+            letter.push(raide);
+
+                if (raide === 'A');{
+                    counter.A++;
+                }
+                if (raide === 'B');{
+                    counter.B++;
+                }
+                if (raide === 'C');{
+                    counter.C++;
+                }
+                if (raide === 'D');{
+                    counter.D++;
+                }
+            }
+                document.write(letter);
+                document.write(`A: ${counter.A}, B: ${counter.B}, C: ${counter.C}, D: ${counter.D}`);
+
+        document.write('<h4>#4</h4>');
+        //#4 Išrūšiuokite 3 uždavinio masyvą pagal abecėlę.
+        letter.sort();
+        document.write(`Sorted array:`, letter);
+
+        document.write('<h4>#5</h4>');
+        //#5 Sugeneruokite 3 masyvus pagal 3 uždavinio sąlygą. 
+        // Sudėkite masyvus, sudėdami reiksmes pagal atitinkamus indeksus. 
+        // Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių 
+        // ir kiek unikalių kombinacijų gavote.
+        let arr = {
+            first: [],
+            second: [],
+            third: [],
+        }
+
+        for( let i =0; i<200; i++)
+        arr.first.push(raides[rand(0, raides.length - 1)]);
+        arr.second.push(raides[rand(0, raides.length - 1)]);
+        arr.third.push(raides[rand(0, raides.length - 1)]);
+
+        document.write(`The first array: ${arr.first}`);
+        document.write(`The second array: ${arr.second}`);
+        document.write(`The third array: ${arr.third}`);
+
+        letter = [];
+         for( let i in arr.first){
+            letter.push(arr.first[i] + arr.second[i] + arr.third[i]);
+         }
+         document.write(`Mixed array: ${letter}`);
+         
+         let count = 0;
+         let combination = [];
+
+         for(let combo of letter){
+            if(
+                combo != 'AAA' &&
+                combo != 'BBB' &&
+                combo != 'CCC' &&
+                combo != 'DDD' 
+            )
+            count++;
+
+            if(!combination.includes(combo))
+            combination.push(combo);
+         }
+
+         document.write(count);
+         document.write(combination);
+
+        document.write('<h4>#6</h4>');
+        //#6 Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. 
+        //Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
+
+        let arr1 = [];
+        let arr2 = [];
+        let i = 0;
+
+        // while(arr1 < 100){
+        //     let one = rand(100, 999);
+
+        //     if (!arr1.includes(one))
+        //     arr1.push(one);
+        // }
+        // while(arr2 < 100){
+        //     let two = rand(100, 999);
+
+        //     if (!arr2.includes(two))
+        //     arr2.push(two);
+        // }
+        let z = 0;
+        for (let i = 0; i < 100; i++){
+            if (arr1.indexOf(i) == -1) {  
+            arr1.push(rand(100, 999));
+        }
+    } 
+     for (let z = 0; z < 100; z++){
+            if (arr2.indexOf(z) == -1) {  
+            arr2.push(rand(100, 999));
+            } 
+        } 
+
+            console.log(arr1);
+            console.log(arr2);
+            document.write(`<div>Array 1: ${arr1}</div>`);
+            document.write(`<div>Array 2: ${arr2}</div>`);
+
+        document.write('<h4>#7</h4>');
+        //#7 Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, 
+        //bet nėra antrame 6 uždavinio masyve.
+        let arr3 = new Set(arr2);
+
+        console.log(arr1.filter(i => !arr3.has(i)));
+            document.write(`<div>Array 3 (single values): ${arr1.filter(i => !arr3.has(i))}</div>`);
+        
+        document.write('<h4>#8</h4>');
+        //#8 Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
+        function intersection(first, second)
+        {
+            var s = new Set(second);
+            return first.filter(item => s.has(item));
+        };
+
+        let common = intersection(arr1, arr2);
+        let arr4 = [];
+        arr4.push(common);
+      
+          console.log("The common elements are: " + common);
+ 
+            document.write(`<div>Array 4 (duplicate values): ${arr4}</div>`);
+
+        document.write('<h4>#9</h4>');
+        //#9 Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės,
+        //o jo reikšmės būtų iš antrojo masyvo.
+        let arr5 = [];
+        for(let i in arr1){
+            arr5[arr1[i]] = arr2[i];
+        }
+        console.log(arr5);
+
+        document.write('<h4>#10</h4>');
+        //#10 Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. 
+        // Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
+        let arr6 = [rand(5, 25), rand(5, 25)];
+        // let value = rand(5, 25);
+        // let a = value + value;
+        //  for (let i = 0; i < 10; i++){
+        //     if (i < 2){
+        //         arr10[i] = value;
+        //     } else if (i >=2)
+        //     arr10[i] = a;
+        //     }
+         
+        for(let i = 2; i < 10; i++){
+            arr6[arr6.length] = arr6[i - 2] + arr6[i - 1];
+        }
+
+         document.write(arr6)
+
+    </script>
+</body>
+</html>
