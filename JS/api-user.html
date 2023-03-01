@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Random user</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
+    <style>
+        body{
+            background-color: black;
+        }
+        .container{
+            width: 800px;
+            height: 450px;
+            margin: 100px auto;
+            background: rgb(255,255,255);
+            border-radius: 20px;
+            box-shadow: 1px 1px 10px 1px #c2b9b9;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .userPhoto, .userData h1 {
+            display: flex;
+            margin: 10px auto;
+            align-items: center;
+            justify-content: center;
+        }
+        .userPhoto img{
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            border-radius: 50%;
+            padding: 6px;
+        }
+        .userData p{
+            color:#817a7a;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        .userData h1{
+            margin-bottom: 25px;
+        }
+        .info ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            position: relative;
+        }
+        .info li{
+            color: rgb(171, 167, 167);
+            font-size: 30px;
+            line-height: 35px;
+            text-align: center;
+            transition: 0.2s;
+            transform: translateY(20px);
+        }
+        .info span i{
+            color: rgb(171, 167, 167);
+            font-size: 14px;
+            transition: 0.2s;
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        .info li:before{
+            content: '';
+            position: absolute;
+            transition: 0.2s;
+            transform: scaleX(0);
+        }
+        .info span i:before{
+            content: "";
+            position:absolute;
+            transition: 0.2s;
+            transform: scaleY(0);
+        }
+        .info li:hover:before,
+        .info span i:hover:before{
+            transform: scale(1);
+        }
+        .info li:hover,
+        .info span i:hover{
+            color: rgb(97, 237, 102);
+            transform: translateY(0);
+            opacity: 1;
+        } 
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section"></div>
+        <div class="userRand" onclick="getInfo()">
+            <div class="userPhoto"></div>
+            <div class="userData">
+                <p class="title"></p>
+                <h1 class="userInfo"></h1>
+            </div>
+            <div class="info">
+                <ul>
+                    <li class="user" data-type="Hi, My name is" onmouseenter="changeText(event)">
+                        <i class="bi bi-person"></i>
+                        <span><i class="bi bi-dot"></i></span>
+                    </li>
+                    <li class="email" data-type="My e-mail is" onmouseenter="changeText(event)">
+                        <i class="bi bi-envelope"></i>
+                        <span><i class="bi bi-dot"></i></span>
+                    </li>
+                    <li class="birthDate" data-type="My birthday is" onmouseenter="changeText(event)">
+                        <i class="bi bi-calendar3"></i>
+                        <span><i class="bi bi-dot"></i></span>
+                    </li>
+                    <li class="map" data-type="My address is" onmouseenter="changeText(event)">
+                        <i class="bi bi-pin-map-fill"></i>
+                        <span><i class="bi bi-dot"></i></span>
+                    </li>
+                    <li class="phone" data-type="My phone is" onmouseenter="changeText(event)">
+                        <i class="bi bi-telephone"></i>
+                        <span><i class="bi bi-dot"></i></span>
+                    </li>
+                    <li class="lock" data-type="My password is" onmouseenter="changeText(event)">
+                        <i class="bi bi-lock"></i>
+                        <span><i class="bi bi-dot"></i></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const pic = document.querySelector('.userPhoto');
+        const title = document.querySelector('.title');
+        const name = document.querySelector('.userInfo');
+        const user = document.querySelector('.user');
+        const email = document.querySelector('.email');
+        const date = document.querySelector('.birthDate');
+        const map = document.querySelector('.map');
+        const phone = document.querySelector('.phone');
+        const word = document.querySelector('.lock');
+
+        function getInfo(){
+            fetch('https://randomuser.me/api/')
+            .then(resp => resp.json())
+            .then(resp => {
+                 pic.innerHTML = `<img src="${resp.results[0].picture.large}" />`;
+                 title.innerHTML = 'Hi, My name is';
+                 name.innerHTML = resp.results[0].name.first + ' ' + resp.results[0].name.last;
+
+                 user.dataset.text = resp.results[0].name.first + ' ' + resp.results[0].name.last;
+                 email.dataset.text = resp.results[0].email;
+                 date.dataset.text = resp.results[0].dob.date;
+                 map.dataset.text = resp.results[0].location.street.number + ' ' + resp.results[0].location.street.name;
+                 phone.dataset.text = resp.results[0].cell;
+                 word.dataset.text = resp.results[0].login.password;
+            })
+        }
+            function changeText(e){
+            document.querySelectorAll('.info li').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            e.target.classList.add('active');
+
+            document.querySelector('.title').textContent = e.target.dataset.type;
+            document.querySelector('.userInfo').textContent = e.target.dataset.text;
+            }
+        
+        getInfo();
+
+    </script>
+</body>
+</html>
