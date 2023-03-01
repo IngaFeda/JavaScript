@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Game</title>
+<style>
+    body{
+        background: url('../game/bg.jpg') no-repeat top center / cover;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .game{
+        position: relative;
+        width: 800px;
+        height: 700px;
+        border: 3px solid black;
+    }
+    .box{
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .gameplace{
+        display: flex;
+        gap: 10px;
+        width: 1300px;
+        margin: 20px auto;
+    }
+    .result{
+        width:400px;
+        height: 500px;
+        text-align: center;
+        padding-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="gameplace">
+        <div class="game">
+            <div class="box"></div>
+        </div>
+
+        <div class="result"></div>
+    </div>
+
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        const box = document.querySelector('.box');
+        const result = document.querySelector('.result');
+        const game= document.querySelector('.game');
+        const colors = ['yellow', 'orange','red'];
+        const width = 800;
+        const height = 700;
+        const boxW = 50;
+        const boxH = 50;
+        const roundL = 10;
+        const roundS = 30;
+
+        let round = 0;
+        let roundSPassed = 0;
+        let playerScore = 0;
+        let roundPlayerScore = 0;
+        let clicked = false;
+
+        const gameID = setInterval(() => {
+            if(roundSPassed === roundS){
+                let computerScore = (roundL * roundS) - playerScore;
+                if(computerScore > playerScore){
+                game.innerHTML = `Game won: Computer`;
+                } else if(computerScore === playerScore){
+                    game.innerHTML = `Draw`;
+                }else {
+                    game.innerHTML = `Game won: Player`;
+                }
+            return clearInterval(gameID);
+        }
+            round++;
+            clicked = false;
+
+            box.style.backgroundColor= colors[rand(0, colors.length - 1)];
+            box.style.top = rand(0, height - boxH) + 'px';
+            box.style.left = rand(0, width - boxW) + 'px';
+
+            if(round >= roundL){
+                result.innerHTML += `<h4> Your score: ${roundPlayerScore}, Computer score: ${roundL - roundPlayerScore}</h4>`;
+
+                round = 0;
+                roundPlayerScore = 0;
+                roundSPassed++;
+            }
+        }, 1000);
+
+        box.addEventListener('click', () =>{
+            if(clicked) return;
+            clicked = true;
+            playerScore++;
+            roundPlayerScore++;
+        });
+    </script>
+</body>
+</html>
