@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Countdown</title>
+    <style>
+    body {
+        background: #fcf3f3;
+        margin: 24px;
+    }
+    h1{
+        text-align: center;
+        margin-top: 150px;
+    }
+    .timer {
+        font-family: sans-serif;
+        display: block;
+        padding: 24px 32px;
+        border-radius: 30px;
+        text-align: center;
+        width: 300px;
+        margin: 50px auto;
+    }
+    .part {
+        font-size: 36px;
+        font-weight: bold;
+    }
+    .btn {
+        width: 50px;
+        height: 50px;
+        margin-left: 16px;
+        border-radius: 50%;
+        border: none;
+        color: white;
+        background: #cdb1e4;
+        cursor: pointer;
+    }
+    .btn--start {
+        background: #85ebaf;
+    }
+    .btn--stop {
+        background: #f58caf;
+    }
+    </style>
+</head>
+<body>
+    <h1>Timer</h1>
+    <div class="timer"></div>
+
+    <script>
+        class Timer {
+        constructor(root) {
+            root.innerHTML = Timer.getHTML();
+
+            this.el = {
+            minutes: root.querySelector(".part--minutes"),
+            seconds: root.querySelector(".part--seconds"),
+            control: root.querySelector(".btn--control"),
+            reset: root.querySelector(".btn--reset")
+            };
+
+            this.interval = null;
+            this.remainingSeconds = 0;
+
+            this.el.control.addEventListener("click", () => {
+            if (this.interval === null) {
+                this.start();
+            } else {
+                this.stop();
+            }
+            });
+
+            this.el.reset.addEventListener("click", () => {
+            const inputMinutes = prompt("Enter number of minutes:");
+
+            if (inputMinutes < 60) {
+                this.stop();
+                this.remainingSeconds = inputMinutes * 60;
+                this.updateInterfaceTime();
+            }
+            });
+        }
+
+        updateInterfaceTime() {
+            const minutes = Math.floor(this.remainingSeconds / 60);
+            const seconds = this.remainingSeconds % 60;
+
+            this.el.minutes.textContent = minutes.toString().padStart(2, "0");
+            this.el.seconds.textContent = seconds.toString().padStart(2, "0");
+        }
+
+        updateInterfaceControls() {
+            if (this.interval === null) {
+            this.el.control.innerHTML = `<span class="material-icons">play_arrow</span>`;
+            this.el.control.classList.add("btn--start");
+            this.el.control.classList.remove("btn--stop");
+            } else {
+            this.el.control.innerHTML = `<span class="material-icons">pause</span>`;
+            this.el.control.classList.add("btn--stop");
+            this.el.control.classList.remove("btn--start");
+            }
+        }
+
+        start() {
+            if (this.remainingSeconds === 0) return;
+
+            this.interval = setInterval(() => {
+            this.remainingSeconds--;
+            this.updateInterfaceTime();
+
+            if (this.remainingSeconds === 0) {
+                this.stop();
+            }
+            }, 1000);
+
+            this.updateInterfaceControls();
+        }
+
+        stop() {
+            clearInterval(this.interval);
+
+            this.interval = null;
+
+            this.updateInterfaceControls();
+        }
+
+        static getHTML() {
+            return `
+                    <span class="part part--minutes">00</span>
+                    <span class="part">:</span>
+                    <span class="part part--seconds">00</span>
+                    <button type="button" class="btn btn--control btn--start">
+                        <span class="material-icons">play_arrow</span>
+                    </button>
+                    <button type="button" class="btn btn--reset">
+                        <span class="material-icons">timer</span>
+                    </button>
+                `;
+        }
+        }
+
+        new Timer(
+            document.querySelector(".timer")
+        );
+    </script>
+</body>
+</html>
