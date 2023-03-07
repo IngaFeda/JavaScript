@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background: url("bgr.jpg") no-repeat center center / cover;
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      font-family: 'Zeyada', cursive;
+      color:#fff;
+      font-size: 25px;
+    }
+    p{
+      font-size: 80px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .card{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+      grid-gap: 50px;
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
+    }
+    .cocktail{
+      padding: 10px;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    }
+    .cocktail .title{
+      text-align: center;
+    }
+    .cocktail img{
+      width: 70%;
+      display: block;
+      margin: 0 auto;
+    }
+    .cocktail p{
+      text-decoration: none;
+      font-family: 'Zeyada', cursive;
+      color:#fff;
+      font-size: 27px;
+      padding-left: 10px;
+      position: relative;
+      cursor: pointer;
+    }
+    .glow {
+      color: #fff;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      }
+      
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+      }
+    }
+  </style>
+</head>
+<body>
+  <p class="glow">Cocktail card</p>
+  <div class="card">
+  </div>
+  <script>
+      fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=')
+          .then((resp) => resp.json())
+          .then((resp) => {
+            let put = "";
+            for(let item of resp.drinks){
+            put += `
+              <div class="cocktail">
+                <img src="${item.strDrinkThumb}" alt="">
+                <p class="title glow" onclick="showContent(${item.idDrink})">${item.strDrink}</p>
+              </div>
+            `;
+            }
+            document.querySelector('.card').innerHTML = put;
+          });
+
+
+         function showContent(id){
+           fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?=${id}`)
+           .then(resp => resp.json())
+           .then(resp => {
+            const drink = resp.drinks[0];
+
+             let ingredients = '';
+                for(let i = 1; i <= 15; i++){
+                    if(drink['strIngredient' + i] && drink['strMeasure' + i]){
+                        ingredients += `<li> ${drink['strIngredient' + i]} (${drink['strMeasure' + i]})</li>`;
+                    } else if (drink['strIngredient' + i]){
+                        ingredients += `<li> ${drink['strIngredient' + i]}</li>`;
+                    }
+                }
+                document.querySelector('.card').innerHTML = `
+                  <div class="choosen">
+                    <h3 class="glow">${drink.strDrink}></h3>
+                    <div class="part">
+                      <img src="${drink.strDrinkThumb}" alt="">
+                    </div>
+                    <div class="part">
+                      <h6 class="glow">Ingredients</h6>
+                      ${ingredients}
+                      <h6 class="glow">Glass type:</h6>
+                      <p>${drink.strGlass}</p>
+                      <h6 class="glow">Instrunctions:</h6>
+                      <p>${drink.strInstructions}</p>
+                    </div>
+                  </div>
+                   `;
+                   console.log(card)
+            });
+          }
+  </script>
+</body>
+</html>
