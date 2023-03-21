@@ -1,0 +1,29 @@
+<div class="list">
+    <h4 class="text-center mt-5">List of orders</h4>
+    <table class="table table-hover mt-5 align-middle">
+        <thead>
+            <tr>
+                <th class="col-5">Order</th>
+                <th class="col-5">Status</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            {{#each orders}}
+                <tr>
+                    <td>
+                        <div>
+                            <h5><bold>{{info}}</bold></h5>
+                            <p>Address: {{address}}</p>
+                            <p>Payment method: {{payment}}</p>
+                            <p>Shipping method: {{delivery}}</p>
+                        </div>
+                    </td>
+                    <td class="change">
+                        <span><i class="bi bi-clock"></i> Preparing</span>
+                        <button class="btn btn-secondary" onclick="changeStatus()">Change status</button>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
