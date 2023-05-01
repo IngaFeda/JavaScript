@@ -1,0 +1,94 @@
+.main {
+  background-color: #8c5f86;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: lavender;
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px;
+  position: relative;
+}
+
+.msg{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+
+}
+.part{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1{
+    width: 450px;
+    padding-left: 20px;
+    border-right: 2px solid lavender;
+        button{
+            background-color: lavender;
+            color: #45b285;
+            padding: 5px 40px;
+            border-radius: 15px;
+            border: 1px solid #45b28570;
+        }
+        h3{
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Lavishly Yours', cursive;
+            font-size: 40px;
+        }
+}
+
+.box{
+    padding-left: 80px;
+        button{
+            background-color: lavender;
+            color: #45b285;
+            padding: 5px 40px;
+            border-radius: 15px;
+            border: 1px solid #45b28570;
+        }
+        h3{
+            text-align: center;
+            font-family: 'Lavishly Yours', cursive;
+            font-size: 40px;
+        }
+}
+
+.box2{
+    display: flex;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.field{
+        background-color: #45b28570;
+        border: 2px solid #45b285;
+        color: lavender;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+ .field1 {
+        background-color: #45b28570;
+        border: 2px solid #45b285;;
+        color: lavender;
+        padding: 5px 10px;
+        border-radius: 10px;
+        width: 80px;
+    }
+
+.table{
+    color: lavender;
+}
+
+.input{
+    display: flex;
+    flex-direction: row;
+}
